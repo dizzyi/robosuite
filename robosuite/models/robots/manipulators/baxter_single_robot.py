@@ -3,7 +3,7 @@ from robosuite.models.robots.manipulators.manipulator_model import ManipulatorMo
 from robosuite.utils.mjcf_utils import xml_path_completion
 
 
-class Baxter(ManipulatorModel):
+class BaxterSingle(ManipulatorModel):
     """
     Baxter is a hunky bimanual robot designed by Rethink Robotics.
 
@@ -65,7 +65,8 @@ class Baxter(ManipulatorModel):
         """
         # [right]
         # Arms half extended
-        return np.array([0.403, -0.636, 0.114, 1.432, 0.735, 1.205, -0.269])
+        return np.array([0.403, -0.636, 0.114, 1.432, 0.735, 1.205, -0.269,
+                        -0.403, -0.636, -0.114, 1.432, -0.735, 1.205, 0.269])
 
     @property
     def base_xpos_offset(self):
